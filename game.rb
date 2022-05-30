@@ -8,18 +8,18 @@ class Game
 
 
   def start
-    puts "New Game Started. Welcome #{@player_1.name} and #{@player_2.name}"
+    puts "Welcome #{@player_1.name} and #{@player_2.name} to the addition arena"
     turn
   end
 
   def score
-    puts "P1: #{@player_1.lives}/3 --- P2: #{@player_2.lives}/3"
+    puts "LIVES REMAINING ~ P1: #{@player_1.lives}/3 --- P2: #{@player_2.lives}/3"
   end
 
   def winner(player)
-    puts "#{player.name} wins with the score of #{player.lives}/3"
-    puts '---------GAME-OVER--------'
-    puts 'Good bye!'
+    puts "#{player.name} wins with #{player.lives}/3 lives remaining"
+    puts '..........GAME OVER..........'
+    puts '.....THANKS FOR PLAYING......'
     exit(0)
   end
 
@@ -32,18 +32,14 @@ class Game
   end
 
    def turn
+    check_score
     @player_1.new_question
     check_score
     @player_2.new_question
-    check_score
+    score
     if @player_1.lives > 0 && @player_2.lives > 0
-      score
       puts 'Next Question!'
-      score
       turn
-    else
-      score
-      puts "GG"
     end
    end
 end

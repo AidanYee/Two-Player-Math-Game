@@ -19,9 +19,9 @@ class Player
     print '> '
     @userchoice = $stdin.gets.chomp
     if new_question.check_answer?(@userchoice.to_i)
-      puts 'You are a math wizard harry.'
+      puts 'CORRECT! You are a math wizard.'
     else
-      puts 'Time to break out the calculator!'
+      puts 'WRONG!!!! Time to break out the calculator!'
       take_life
     end
   end
