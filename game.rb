@@ -13,4 +13,20 @@ class Game
     pp @player_2
   end
 
+  def score
+    puts "P1: #{@player_1.lives}/3 & P2: #{@player_2.lives}/3"
+  end
+
+   def turn
+    @player_1.new_question
+    @player_2.new_question
+    if @player_1.lives > 0 && @player_2.lives > 0
+      score
+      puts '---------NEW-TURN---------'
+      score
+    else
+      puts '---------GAME-OVER--------'
+      puts 'Good bye!'
+    end
+  end
 end
